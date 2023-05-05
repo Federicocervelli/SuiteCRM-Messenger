@@ -1,4 +1,5 @@
 import invio
+import Mail
 import ripartizione
 import sys
 import logging
@@ -39,7 +40,9 @@ def stampaErroreSintassi():
     print("Utilizzo corretto: python3 inviaMessaggi.py [-v] [path]")
     
 def autenticazione():
+    
     logging.debug("Conclusa funzione autenticazione")
+
     
 def configurazioneLog():
     
