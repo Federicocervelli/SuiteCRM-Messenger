@@ -3,6 +3,8 @@ import Mail
 import ripartizione
 import sys
 import logging
+import requests
+from requests.exceptions import HTTPError
 
 #Valori di default
 verbose = False
@@ -16,7 +18,7 @@ def main():
     #Inizializzazione log
     configurazioneLog()
     #Accesso all'API
-    autenticazione()
+    id = autenticazione()
     #test logging in invio
     invio.test()
           
@@ -40,10 +42,48 @@ def stampaErroreSintassi():
     print("Utilizzo corretto: python3 inviaMessaggi.py [-v] [path]")
     
 def autenticazione():
+    logging.debug("Iniziata funzione autenticazione")
+    loginurl = """https://testkeyall.cittadigitale.org/service/v4/rest.php?method=login&input_type=JSON&response_type=JSON&rest_data={
+            \"user_auth\":
+                { 
+                    \"user_name\":\"restuser\",
+                    \"password\":\"16517ba81e199867116bc2b0a2279bbd\"},
+                    \"application_name\":\"\",
+                    \"name_value_list\":{
+                    \"name\":\"notifyonsave\",
+                    \"value\":\"true\"}
+                }
+            """
+        
+    payload = {}
+    headers = {}
     
-    logging.debug("Conclusa funzione autenticazione")
-
+    try:
+        response = requests.request("GET", loginurl, headers=headers, data=payload)
+        
+    except HTTPError as http_err:
+        logging.error(f'errore HTTP nel login: {http_err}')
+        print(f'errore HTTP nel login: {http_err}')
+        return -1
     
+    except Exception as err:
+        logging.error(f'errore generico nel login: {err}')
+        print(f'errore generico nel login: {err}')
+        return -1
+    
+    jsonResponse = response.json()
+    
+    try:
+        id = jsonResponse["id"]
+        
+    except KeyError:
+        logging.error(f'errore nel login: ' + response.text)
+        print(f'errore nel login: ' + response.text)
+        
+    print("Loggato correttamente con id sessione: " + id)
+    logging.debug("Conclusa funzione autenticazione, l'id sessione è: " + id)
+    return id
+   
 def configurazioneLog():
     
     if(verbose):
