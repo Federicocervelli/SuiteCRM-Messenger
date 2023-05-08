@@ -19,8 +19,9 @@ def main():
     configurazioneLog()
     #Accesso all'API
     id = autenticazione()
-    #test logging in invio
-    invio.test()
+    #Recupero messaggi non inviati dall'API
+    messaggi = collezione(id)
+    
           
 def analisiComando():
     args = sys.argv[1:]
@@ -79,11 +80,56 @@ def autenticazione():
     except KeyError:
         logging.error(f'errore nel login: ' + response.text)
         print(f'errore nel login: ' + response.text)
+        return -1
         
     print("Loggato correttamente con id sessione: " + id)
     logging.debug("Conclusa funzione autenticazione, l'id sessione è: " + id)
     return id
    
+def collezione(id):
+    dataurl = """https://testkeyall.cittadigitale.org/service/v4/rest.php?method=get_entry_list&input_type=JSON&response_type=JSON&rest_data={
+                    "session":\""""+ id + """\",
+                    "module_name":"os_Notifiche_comunicazioni",
+                    "query":"is_sent = 0",
+                    "order_by":"",
+                    "offset":0,
+                    "select_fields":[],
+                    "link_name_to_fields_array":{},
+                    "max_result":10,
+                    "deleted":0
+                }
+            """    
+    payload = {}
+    headers = {}
+    
+    try:
+        response = requests.request("GET", dataurl, headers=headers, data=payload)
+        
+    except HTTPError as http_err:
+        logging.error(f'errore HTTP nel login: {http_err}')
+        print(f'errore HTTP nel login: {http_err}')
+        return -1
+    
+    except Exception as err:
+        logging.error(f'errore generico nel login: {err}')
+        print(f'errore generico nel login: {err}')
+        return -1
+    
+    jsonResponse = response.json()
+    
+    try:
+        resultCount = jsonResponse["result_count"]
+        totalCount = jsonResponse["total_count"]
+        
+    except KeyError:
+        logging.error(f'errore nella collezione: ' + response.text)
+        print(f'errore nella collezione: ' + response.text)
+        return -1
+        
+    print("Collezionati correttamente " + str(resultCount) + " su " + str(totalCount) + " messaggi non anccora mandati totali.")
+    logging.info("Collezionati correttamente " + str(resultCount) + " su " + str(totalCount) + " messaggi non anccora mandati totali.")
+    return jsonResponse
+    
 def configurazioneLog():
     
     if(verbose):
