@@ -1,0 +1,43 @@
+[2023/05/11 16:54:20] [INFO] Programma inizializzato con i seguenti parametri: []
+[2023/05/11 16:54:20] [DEBUG] Iniziata funzione autenticazione
+[2023/05/11 16:54:20] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/11 16:54:21] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=login&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%22user_auth%22:%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22user_name%22:%22restuser%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22password%22:%2216517ba81e199867116bc2b0a2279bbd%22%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22application_name%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name_value_list%22:%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name%22:%22notifyonsave%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22value%22:%22true%22%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/11 16:54:21] [DEBUG] Conclusa funzione autenticazione, l'id sessione è: pkbcoujc6uhnr0nq7j8te7iaub
+[2023/05/11 16:54:21] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/11 16:54:21] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=get_entry_list&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22session%22:%22pkbcoujc6uhnr0nq7j8te7iaub%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22module_name%22:%22os_Notifiche_comunicazioni%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22query%22:%22is_sent%20=%200%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22order_by%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22offset%22:0,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22select_fields%22:%5B%5D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22link_name_to_fields_array%22:%7B%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22max_result%22:10,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22deleted%22:0%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/11 16:54:21] [INFO] Collezionati correttamente 10 su 2020 messaggi non anccora mandati totali.
+[2023/05/11 17:01:41] [INFO] Programma inizializzato con i seguenti parametri: []
+[2023/05/11 17:01:41] [DEBUG] Iniziata funzione autenticazione
+[2023/05/11 17:01:41] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/11 17:01:42] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=login&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%22user_auth%22:%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22user_name%22:%22restuser%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22password%22:%2216517ba81e199867116bc2b0a2279bbd%22%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22application_name%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name_value_list%22:%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name%22:%22notifyonsave%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22value%22:%22true%22%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/11 17:01:42] [DEBUG] Conclusa funzione autenticazione, l'id sessione è: sqdktphssd8jno6gg1dbii8dlv
+[2023/05/11 17:01:42] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/11 17:01:42] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=get_entry_list&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22session%22:%22sqdktphssd8jno6gg1dbii8dlv%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22module_name%22:%22os_Notifiche_comunicazioni%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22query%22:%22is_sent%20=%200%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22order_by%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22offset%22:0,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22select_fields%22:%5B%5D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22link_name_to_fields_array%22:%7B%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22max_result%22:100,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22deleted%22:0%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/11 17:01:42] [INFO] Collezionati correttamente 100 su 2020 messaggi non anccora mandati totali.
+[2023/05/11 17:05:03] [INFO] Programma inizializzato con i seguenti parametri: []
+[2023/05/11 17:05:04] [INFO] Collezionati correttamente 100 su 2020 messaggi non anccora mandati totali.
+[2023/05/11 17:07:54] [INFO] Programma inizializzato con le seguenti flag: []
+[2023/05/11 17:14:14] [INFO] Programma inizializzato con le seguenti flag: []
+[2023/05/11 17:14:14] [INFO] Collezionati correttamente 5 su 2020 messaggi non anccora mandati totali.
+[2023/05/11 17:16:42] [INFO] Programma inizializzato con le seguenti flag: []
+[2023/05/11 17:16:42] [INFO] Collezionati correttamente 5 su 2020 messaggi non anccora mandati totali.
+[2023/05/11 17:17:26] [INFO] Programma inizializzato con le seguenti flag: []
+[2023/05/11 17:17:27] [INFO] Collezionati correttamente 5 su 2020 messaggi non anccora mandati totali.
+[2023/05/11 17:28:16] [INFO] Programma inizializzato con le seguenti flag: []
+[2023/05/11 17:28:17] [INFO] Collezionati correttamente 5 su 2020 messaggi non anccora mandati totali.
+[2023/05/11 17:34:52] [INFO] Programma inizializzato con le seguenti flag: []
+[2023/05/11 17:34:52] [INFO] Collezionati correttamente 5 su 2020 messaggi non anccora mandati totali.
+[2023/05/11 17:35:35] [INFO] Programma inizializzato con le seguenti flag: []
+[2023/05/11 17:35:36] [INFO] Collezionati correttamente 5 su 2020 messaggi non anccora mandati totali.
+[2023/05/11 17:35:52] [INFO] Programma inizializzato con le seguenti flag: []
+[2023/05/11 17:35:52] [INFO] Collezionati correttamente 5 su 2020 messaggi non anccora mandati totali.
+[2023/05/11 17:36:25] [INFO] Programma inizializzato con le seguenti flag: []
+[2023/05/11 17:36:25] [INFO] Collezionati correttamente 5 su 2020 messaggi non anccora mandati totali.
+[2023/05/11 17:36:55] [INFO] Programma inizializzato con le seguenti flag: []
+[2023/05/11 17:36:55] [INFO] Collezionati correttamente 5 su 2020 messaggi non anccora mandati totali.
+[2023/05/11 17:37:31] [INFO] Programma inizializzato con le seguenti flag: []
+[2023/05/11 17:37:31] [INFO] Collezionati correttamente 5 su 2020 messaggi non anccora mandati totali.
+[2023/05/11 17:38:34] [INFO] Programma inizializzato con le seguenti flag: []
+[2023/05/11 17:38:34] [INFO] Collezionati correttamente 5 su 2020 messaggi non anccora mandati totali.
+[2023/05/11 17:38:50] [INFO] Programma inizializzato con le seguenti flag: []
+[2023/05/11 17:38:51] [INFO] Collezionati correttamente 100 su 2020 messaggi non anccora mandati totali.

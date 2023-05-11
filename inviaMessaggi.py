@@ -1,34 +1,45 @@
-import invio
-import Mail
-import ripartizione
+import util.mail
+import util.ripartizione
 import sys
 import logging
 import requests
+import json
+import asyncio
 from requests.exceptions import HTTPError
 
-#Valori di default
 verbose = False
-path = "/var/log/inviomessaggi.log"
+path = "logs/inviamessaggi.log"
+maxResults = 10
 
+#Lettura file di configurazione
+with open("impostazioni.json", "r") as f:
+    dati = json.load(f)
 
+if dati["verbose"] == "true":
+    verbose = True
+if dati["log-path"] != "":
+    path = dati["log-path"]
+if dati["max-results"] != "":
+    maxResults = dati["max-results"]
 
 def main():
-    #Analisi delle casistiche della chiamata del comando
     analisiComando()
-    #Inizializzazione log
     configurazioneLog()
-    #Accesso all'API
+    #Autenticazione all'API
     id = autenticazione()
     #Recupero messaggi non inviati dall'API
-    messaggi = collezione(id)
-    
-          
+    data = collezione(id)
+    util.ripartizione.main(data)
+            
 def analisiComando():
     args = sys.argv[1:]
     global path, verbose #Cambio lo scope a globale
     if len(args) == 2 and args[0] == "-v":
         path = args[1]
         verbose = True
+    elif len(args) == 2 and args[1] == "-v":
+        verbose = True
+        path = args[0]
     elif len(args) == 1 and args[0] == "-v":
         verbose = True
     elif len(args) == 1:
@@ -36,14 +47,12 @@ def analisiComando():
     elif len(args) == 0:
         return
     else:
-        stampaErroreSintassi()
-
-def stampaErroreSintassi():
-    print("Perfavore usa la sintassi corretta per eseguire il comando!")
-    print("Utilizzo corretto: python3 inviaMessaggi.py [-v] [path]")
+        print("Perfavore usa la sintassi corretta per eseguire il comando!")
+        print("Utilizzo corretto: python3 inviaMessaggi.py [-v] [path]")
     
 def autenticazione():
     logging.debug("Iniziata funzione autenticazione")
+    
     loginurl = """https://testkeyall.cittadigitale.org/service/v4/rest.php?method=login&input_type=JSON&response_type=JSON&rest_data={
             \"user_auth\":
                 { 
@@ -95,7 +104,7 @@ def collezione(id):
                     "offset":0,
                     "select_fields":[],
                     "link_name_to_fields_array":{},
-                    "max_result":10,
+                    "max_result":""" + str(maxResults) +""",
                     "deleted":0
                 }
             """    
@@ -140,7 +149,7 @@ def configurazioneLog():
     logging.basicConfig(filename=path, level=tipolog,
                     format='[%(asctime)s] [%(levelname)s] %(message)s',
                     datefmt='%Y/%m/%d %H:%M:%S')
-    logging.info("Programma inizializzato con i seguenti parametri: " + str(sys.argv[1:]))
+    logging.info("Programma inizializzato con le seguenti flag: " + str(sys.argv[1:]))
+    logging.debug("Verbose: " + str(verbose) + " Path: " + str(path) + " Risultati Massimi: " + str(maxResults))
     
-if __name__ == "__main__":
-    main()
+main()
