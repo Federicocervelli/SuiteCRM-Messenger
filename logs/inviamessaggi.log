@@ -41,3 +41,734 @@
 [2023/05/11 17:38:34] [INFO] Collezionati correttamente 5 su 2020 messaggi non anccora mandati totali.
 [2023/05/11 17:38:50] [INFO] Programma inizializzato con le seguenti flag: []
 [2023/05/11 17:38:51] [INFO] Collezionati correttamente 100 su 2020 messaggi non anccora mandati totali.
+[2023/05/14 15:18:33] [INFO] Programma inizializzato con le seguenti flag: []
+[2023/05/14 15:18:34] [INFO] Collezionati correttamente 100 su 2020 messaggi non anccora mandati totali.
+[2023/05/14 15:18:49] [ERROR] Task exception was never retrieved
+future: <Task finished name='Task-1' coro=<ripartizione() done, defined at C:\Users\yoshi\Desktop\Messenger\SuiteCRM-Messenger\util\ripartizione.py:8> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "C:\Users\yoshi\Desktop\Messenger\SuiteCRM-Messenger\inviaMessaggi.py", line 154, in <module>
+    main()
+  File "C:\Users\yoshi\Desktop\Messenger\SuiteCRM-Messenger\inviaMessaggi.py", line 31, in main
+    util.ripartizione.main(data)
+  File "C:\Users\yoshi\Desktop\Messenger\SuiteCRM-Messenger\util\ripartizione.py", line 30, in main
+    asyncio.run(ripartizione(data))
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\runners.py", line 189, in run
+    with Runner(debug=debug) as runner:
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\runners.py", line 63, in __exit__
+    self.close()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\runners.py", line 71, in close
+    _cancel_all_tasks(loop)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\runners.py", line 201, in _cancel_all_tasks
+    loop.run_until_complete(tasks.gather(*to_cancel, return_exceptions=True))
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\base_events.py", line 607, in run_forever
+    self._run_once()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\base_events.py", line 1922, in _run_once
+    handle._run()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\yoshi\Desktop\Messenger\SuiteCRM-Messenger\util\ripartizione.py", line 16, in ripartizione
+    await asyncio.gather(*tasks)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\base_events.py", line 607, in run_forever
+    self._run_once()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\base_events.py", line 1922, in _run_once
+    handle._run()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\yoshi\Desktop\Messenger\SuiteCRM-Messenger\util\ripartizione.py", line 21, in sendMsg
+    await util.mail.main()
+  File "C:\Users\yoshi\Desktop\Messenger\SuiteCRM-Messenger\util\mail.py", line 34, in main
+    invia_mail(credenzialiMail['email_sender'], 'federicocervelli01@gmail.com', 'Prova', """Ciao Marco""", credenzialiMail['email_password'])
+  File "C:\Users\yoshi\Desktop\Messenger\SuiteCRM-Messenger\util\mail.py", line 28, in invia_mail
+    smtp.sendmail(mittente, destinatario, em.as_string())
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 902, in sendmail
+    (code, resp) = self.data(msg)
+                   ^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 580, in data
+    (code, msg) = self.getreply()
+                  ^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 398, in getreply
+    line = self.file.readline(_MAXLINE + 1)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 706, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 1278, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 1134, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\runners.py", line 157, in _on_sigint
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+[2023/05/14 15:19:34] [INFO] Programma inizializzato con le seguenti flag: []
+[2023/05/14 15:19:34] [INFO] Collezionati correttamente 100 su 2020 messaggi non anccora mandati totali.
+[2023/05/14 15:21:31] [INFO] Programma inizializzato con le seguenti flag: []
+[2023/05/14 15:21:32] [INFO] Collezionati correttamente 100 su 2020 messaggi non anccora mandati totali.
+[2023/05/14 15:21:52] [INFO] Programma inizializzato con le seguenti flag: []
+[2023/05/14 15:21:52] [INFO] Collezionati correttamente 100 su 2020 messaggi non anccora mandati totali.
+[2023/05/14 15:22:10] [INFO] Programma inizializzato con le seguenti flag: ['-v']
+[2023/05/14 15:22:10] [DEBUG] Verbose: True Path: logs/inviamessaggi.log Risultati Massimi: 100
+[2023/05/14 15:22:10] [DEBUG] Iniziata funzione autenticazione
+[2023/05/14 15:22:10] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/14 15:22:10] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=login&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%22user_auth%22:%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22user_name%22:%22restuser%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22password%22:%2216517ba81e199867116bc2b0a2279bbd%22%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22application_name%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name_value_list%22:%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name%22:%22notifyonsave%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22value%22:%22true%22%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/14 15:22:10] [DEBUG] Conclusa funzione autenticazione, l'id sessione è: jb2iifsb37ofg0omsn5lm0tp23
+[2023/05/14 15:22:10] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/14 15:22:11] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=get_entry_list&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22session%22:%22jb2iifsb37ofg0omsn5lm0tp23%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22module_name%22:%22os_Notifiche_comunicazioni%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22query%22:%22is_sent%20=%200%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22order_by%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22offset%22:0,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22select_fields%22:%5B%5D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22link_name_to_fields_array%22:%7B%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22max_result%22:100,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22deleted%22:0%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/14 15:22:11] [INFO] Collezionati correttamente 100 su 2020 messaggi non anccora mandati totali.
+[2023/05/14 15:22:11] [DEBUG] Using proactor: IocpProactor
+[2023/05/14 15:22:42] [INFO] Programma inizializzato con le seguenti flag: ['-v']
+[2023/05/14 15:22:42] [DEBUG] Verbose: True Path: logs/inviamessaggi.log Risultati Massimi: 100
+[2023/05/14 15:22:42] [DEBUG] Iniziata funzione autenticazione
+[2023/05/14 15:22:42] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/14 15:22:42] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=login&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%22user_auth%22:%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22user_name%22:%22restuser%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22password%22:%2216517ba81e199867116bc2b0a2279bbd%22%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22application_name%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name_value_list%22:%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name%22:%22notifyonsave%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22value%22:%22true%22%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/14 15:22:42] [DEBUG] Conclusa funzione autenticazione, l'id sessione è: o6i56fsfvm1klg9tko3emkcibv
+[2023/05/14 15:22:42] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/14 15:22:43] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=get_entry_list&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22session%22:%22o6i56fsfvm1klg9tko3emkcibv%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22module_name%22:%22os_Notifiche_comunicazioni%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22query%22:%22is_sent%20=%200%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22order_by%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22offset%22:0,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22select_fields%22:%5B%5D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22link_name_to_fields_array%22:%7B%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22max_result%22:100,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22deleted%22:0%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/14 15:22:43] [INFO] Collezionati correttamente 100 su 2020 messaggi non anccora mandati totali.
+[2023/05/14 15:22:43] [DEBUG] Using proactor: IocpProactor
+[2023/05/14 15:22:43] [DEBUG] Iniziata funzione main
+[2023/05/14 15:22:45] [DEBUG] Terminata funzione main
+[2023/05/14 15:22:45] [DEBUG] Iniziata funzione main
+[2023/05/14 15:22:46] [ERROR] Task exception was never retrieved
+future: <Task finished name='Task-1' coro=<ripartizione() done, defined at C:\Users\yoshi\Desktop\Messenger\SuiteCRM-Messenger\util\ripartizione.py:8> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "C:\Users\yoshi\Desktop\Messenger\SuiteCRM-Messenger\inviaMessaggi.py", line 154, in <module>
+    main()
+  File "C:\Users\yoshi\Desktop\Messenger\SuiteCRM-Messenger\inviaMessaggi.py", line 31, in main
+    util.ripartizione.main(data)
+  File "C:\Users\yoshi\Desktop\Messenger\SuiteCRM-Messenger\util\ripartizione.py", line 30, in main
+    asyncio.run(ripartizione(data))
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\runners.py", line 189, in run
+    with Runner(debug=debug) as runner:
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\runners.py", line 63, in __exit__
+    self.close()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\runners.py", line 71, in close
+    _cancel_all_tasks(loop)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\runners.py", line 201, in _cancel_all_tasks
+    loop.run_until_complete(tasks.gather(*to_cancel, return_exceptions=True))
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\base_events.py", line 607, in run_forever
+    self._run_once()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\base_events.py", line 1922, in _run_once
+    handle._run()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\yoshi\Desktop\Messenger\SuiteCRM-Messenger\util\ripartizione.py", line 16, in ripartizione
+    await asyncio.gather(*tasks)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\base_events.py", line 640, in run_until_complete
+    self.run_forever()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\base_events.py", line 607, in run_forever
+    self._run_once()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\base_events.py", line 1922, in _run_once
+    handle._run()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\yoshi\Desktop\Messenger\SuiteCRM-Messenger\util\ripartizione.py", line 21, in sendMsg
+    await util.mail.main()
+  File "C:\Users\yoshi\Desktop\Messenger\SuiteCRM-Messenger\util\mail.py", line 34, in main
+    invia_mail(credenzialiMail['email_sender'], 'federicocervelli01@gmail.com', 'Prova', """Ciao Marco""", credenzialiMail['email_password'])
+  File "C:\Users\yoshi\Desktop\Messenger\SuiteCRM-Messenger\util\mail.py", line 28, in invia_mail
+    smtp.login(mittente, password)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 714, in login
+    self.ehlo_or_helo_if_needed()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 611, in ehlo_or_helo_if_needed
+    if not (200 <= self.ehlo()[0] <= 299):
+                   ^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 452, in ehlo
+    (code, msg) = self.getreply()
+                  ^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 398, in getreply
+    line = self.file.readline(_MAXLINE + 1)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 706, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 1278, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\ssl.py", line 1134, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\asyncio\runners.py", line 157, in _on_sigint
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+[2023/05/14 15:31:08] [INFO] Programma inizializzato con le seguenti flag: ['-v']
+[2023/05/14 15:31:08] [DEBUG] Verbose: True Path: logs/inviamessaggi.log Risultati Massimi: 100
+[2023/05/14 15:31:08] [DEBUG] Iniziata funzione autenticazione
+[2023/05/14 15:31:08] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/14 15:31:08] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=login&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%22user_auth%22:%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22user_name%22:%22restuser%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22password%22:%2216517ba81e199867116bc2b0a2279bbd%22%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22application_name%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name_value_list%22:%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name%22:%22notifyonsave%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22value%22:%22true%22%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/14 15:31:08] [DEBUG] Conclusa funzione autenticazione, l'id sessione è: anle5jdln73qvbvhm7k7bca65j
+[2023/05/14 15:31:08] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/14 15:31:08] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=get_entry_list&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22session%22:%22anle5jdln73qvbvhm7k7bca65j%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22module_name%22:%22os_Notifiche_comunicazioni%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22query%22:%22is_sent%20=%200%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22order_by%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22offset%22:0,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22select_fields%22:%5B%5D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22link_name_to_fields_array%22:%7B%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22max_result%22:100,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22deleted%22:0%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/14 15:31:09] [INFO] Collezionati correttamente 100 su 2020 messaggi non anccora mandati totali.
+[2023/05/14 15:31:09] [DEBUG] Using proactor: IocpProactor
+[2023/05/14 15:31:32] [INFO] Programma inizializzato con le seguenti flag: ['-v']
+[2023/05/14 15:31:32] [DEBUG] Verbose: True Path: logs/inviamessaggi.log Risultati Massimi: 100
+[2023/05/14 15:31:32] [DEBUG] Iniziata funzione autenticazione
+[2023/05/14 15:31:32] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/14 15:31:32] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=login&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%22user_auth%22:%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22user_name%22:%22restuser%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22password%22:%2216517ba81e199867116bc2b0a2279bbd%22%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22application_name%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name_value_list%22:%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name%22:%22notifyonsave%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22value%22:%22true%22%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/14 15:31:32] [DEBUG] Conclusa funzione autenticazione, l'id sessione è: uafemku9fvbfijad9sucu3epmc
+[2023/05/14 15:31:32] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/14 15:31:32] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=get_entry_list&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22session%22:%22uafemku9fvbfijad9sucu3epmc%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22module_name%22:%22os_Notifiche_comunicazioni%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22query%22:%22is_sent%20=%200%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22order_by%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22offset%22:0,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22select_fields%22:%5B%5D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22link_name_to_fields_array%22:%7B%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22max_result%22:100,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22deleted%22:0%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/14 15:31:32] [INFO] Collezionati correttamente 100 su 2020 messaggi non anccora mandati totali.
+[2023/05/14 15:31:32] [DEBUG] Using proactor: IocpProactor
+[2023/05/14 15:32:22] [INFO] Programma inizializzato con le seguenti flag: ['-v']
+[2023/05/14 15:32:22] [DEBUG] Verbose: True Path: logs/inviamessaggi.log Risultati Massimi: 100
+[2023/05/14 15:32:22] [DEBUG] Iniziata funzione autenticazione
+[2023/05/14 15:32:22] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/14 15:32:22] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=login&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%22user_auth%22:%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22user_name%22:%22restuser%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22password%22:%2216517ba81e199867116bc2b0a2279bbd%22%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22application_name%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name_value_list%22:%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name%22:%22notifyonsave%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22value%22:%22true%22%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/14 15:32:22] [DEBUG] Conclusa funzione autenticazione, l'id sessione è: vmqiadavns7fop4gmf76ku3o3l
+[2023/05/14 15:32:22] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/14 15:32:23] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=get_entry_list&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22session%22:%22vmqiadavns7fop4gmf76ku3o3l%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22module_name%22:%22os_Notifiche_comunicazioni%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22query%22:%22is_sent%20=%200%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22order_by%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22offset%22:0,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22select_fields%22:%5B%5D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22link_name_to_fields_array%22:%7B%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22max_result%22:100,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22deleted%22:0%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/14 15:32:23] [INFO] Collezionati correttamente 100 su 2020 messaggi non anccora mandati totali.
+[2023/05/14 15:32:23] [DEBUG] Using proactor: IocpProactor
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:24] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:24] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:24] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:24] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:24] [DEBUG] Iniziata funzione main
+[2023/05/14 15:32:25] [DEBUG] Terminata funzione main
+[2023/05/14 15:32:25] [DEBUG] Terminata funzione main
+[2023/05/14 15:32:25] [DEBUG] Terminata funzione main
+[2023/05/14 15:32:25] [DEBUG] Terminata funzione main
+[2023/05/14 15:32:26] [DEBUG] Terminata funzione main
+[2023/05/14 15:32:26] [DEBUG] Terminata funzione main
+[2023/05/14 15:32:26] [DEBUG] Terminata funzione main
+[2023/05/14 15:32:26] [DEBUG] Terminata funzione main
+[2023/05/14 15:32:26] [DEBUG] Terminata funzione main
+[2023/05/14 15:32:27] [DEBUG] Terminata funzione main
+[2023/05/14 15:32:27] [DEBUG] Terminata funzione main
+[2023/05/14 15:32:28] [DEBUG] Terminata funzione main
+[2023/05/14 15:32:28] [DEBUG] Terminata funzione main
+[2023/05/14 15:32:28] [DEBUG] Terminata funzione main
+[2023/05/14 15:32:28] [DEBUG] Terminata funzione main
+[2023/05/14 15:32:29] [DEBUG] Terminata funzione main
+[2023/05/14 15:35:42] [INFO] Programma inizializzato con le seguenti flag: ['-v']
+[2023/05/14 15:35:42] [DEBUG] Verbose: True Path: logs/inviamessaggi.log Risultati Massimi: 100
+[2023/05/14 15:35:42] [DEBUG] Iniziata funzione autenticazione
+[2023/05/14 15:35:42] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/14 15:35:42] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=login&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%22user_auth%22:%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22user_name%22:%22restuser%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22password%22:%2216517ba81e199867116bc2b0a2279bbd%22%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22application_name%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name_value_list%22:%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name%22:%22notifyonsave%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22value%22:%22true%22%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/14 15:35:42] [DEBUG] Conclusa funzione autenticazione, l'id sessione è: dfiib9u4q8n1iulds3ll6fm3rr
+[2023/05/14 15:35:42] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/14 15:35:43] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=get_entry_list&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22session%22:%22dfiib9u4q8n1iulds3ll6fm3rr%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22module_name%22:%22os_Notifiche_comunicazioni%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22query%22:%22is_sent%20=%200%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22order_by%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22offset%22:0,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22select_fields%22:%5B%5D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22link_name_to_fields_array%22:%7B%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22max_result%22:100,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22deleted%22:0%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/14 15:35:43] [INFO] Collezionati correttamente 100 su 2020 messaggi non anccora mandati totali.
+[2023/05/14 15:35:43] [DEBUG] Using proactor: IocpProactor
+[2023/05/14 15:35:43] [DEBUG] Iniziata funzione main
+[2023/05/14 15:35:43] [DEBUG] Iniziata funzione main
+[2023/05/14 15:35:43] [DEBUG] Iniziata funzione main
+[2023/05/14 15:35:45] [DEBUG] Terminata funzione main
+[2023/05/14 15:35:45] [DEBUG] Iniziata funzione main
+[2023/05/14 15:35:45] [DEBUG] Terminata funzione main
+[2023/05/14 15:35:45] [DEBUG] Iniziata funzione main
+[2023/05/14 15:35:45] [DEBUG] Terminata funzione main
+[2023/05/14 15:35:45] [DEBUG] Iniziata funzione main
+[2023/05/14 15:35:47] [DEBUG] Terminata funzione main
+[2023/05/14 15:35:47] [DEBUG] Iniziata funzione main
+[2023/05/14 15:35:47] [DEBUG] Terminata funzione main
+[2023/05/14 15:35:47] [DEBUG] Iniziata funzione main
+[2023/05/14 15:35:47] [DEBUG] Terminata funzione main
+[2023/05/14 15:35:47] [DEBUG] Iniziata funzione main
+[2023/05/14 15:35:48] [DEBUG] Terminata funzione main
+[2023/05/14 15:35:48] [DEBUG] Iniziata funzione main
+[2023/05/14 15:35:49] [DEBUG] Terminata funzione main
+[2023/05/14 15:35:49] [DEBUG] Iniziata funzione main
+[2023/05/14 15:35:49] [DEBUG] Terminata funzione main
+[2023/05/14 15:35:49] [DEBUG] Iniziata funzione main
+[2023/05/14 15:35:50] [DEBUG] Terminata funzione main
+[2023/05/14 15:35:50] [DEBUG] Iniziata funzione main
+[2023/05/14 15:35:51] [DEBUG] Terminata funzione main
+[2023/05/14 15:35:51] [DEBUG] Iniziata funzione main
+[2023/05/14 15:35:51] [DEBUG] Terminata funzione main
+[2023/05/14 15:35:51] [DEBUG] Iniziata funzione main
+[2023/05/14 15:35:52] [DEBUG] Terminata funzione main
+[2023/05/14 15:35:52] [DEBUG] Iniziata funzione main
+[2023/05/14 15:35:53] [DEBUG] Terminata funzione main
+[2023/05/14 15:35:53] [DEBUG] Iniziata funzione main
+[2023/05/14 15:35:53] [DEBUG] Terminata funzione main
+[2023/05/14 15:35:53] [DEBUG] Iniziata funzione main
+[2023/05/14 15:35:54] [DEBUG] Terminata funzione main
+[2023/05/14 15:35:54] [DEBUG] Iniziata funzione main
+[2023/05/14 15:35:54] [DEBUG] Terminata funzione main
+[2023/05/14 15:35:54] [DEBUG] Iniziata funzione main
+[2023/05/14 15:35:55] [DEBUG] Terminata funzione main
+[2023/05/14 15:35:55] [DEBUG] Iniziata funzione main
+[2023/05/14 15:35:56] [DEBUG] Terminata funzione main
+[2023/05/14 15:35:56] [DEBUG] Iniziata funzione main
+[2023/05/14 15:35:56] [DEBUG] Terminata funzione main
+[2023/05/14 15:35:56] [DEBUG] Iniziata funzione main
+[2023/05/14 15:35:56] [DEBUG] Terminata funzione main
+[2023/05/14 15:35:56] [DEBUG] Iniziata funzione main
+[2023/05/14 15:35:58] [DEBUG] Terminata funzione main
+[2023/05/14 15:35:58] [DEBUG] Iniziata funzione main
+[2023/05/14 15:35:58] [DEBUG] Terminata funzione main
+[2023/05/14 15:35:58] [DEBUG] Iniziata funzione main
+[2023/05/14 15:35:59] [DEBUG] Terminata funzione main
+[2023/05/14 15:35:59] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:00] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:00] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:00] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:00] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:01] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:01] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:02] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:02] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:02] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:02] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:03] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:03] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:04] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:04] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:04] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:04] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:05] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:05] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:06] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:06] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:06] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:06] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:07] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:07] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:08] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:08] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:08] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:08] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:09] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:09] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:09] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:09] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:10] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:10] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:11] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:11] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:11] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:11] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:12] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:12] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:13] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:13] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:14] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:14] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:14] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:14] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:15] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:15] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:15] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:15] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:16] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:16] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:17] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:17] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:17] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:17] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:18] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:18] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:19] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:19] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:19] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:19] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:20] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:20] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:21] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:21] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:21] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:21] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:22] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:22] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:23] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:23] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:23] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:24] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:24] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:25] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:25] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:25] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:25] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:26] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:26] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:27] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:27] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:27] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:27] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:28] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:28] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:28] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:28] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:29] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:29] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:30] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:30] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:31] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:31] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:31] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:31] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:32] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:32] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:32] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:32] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:33] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:33] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:34] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:34] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:34] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:34] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:35] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:35] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:36] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:36] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:36] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:36] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:37] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:37] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:38] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:38] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:38] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:38] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:38] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:38] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:39] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:39] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:40] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:40] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:40] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:40] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:41] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:41] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:42] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:42] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:42] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:42] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:44] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:44] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:44] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:44] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:45] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:45] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:46] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:46] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:46] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:46] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:46] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:46] [DEBUG] Iniziata funzione main
+[2023/05/14 15:36:47] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:48] [DEBUG] Terminata funzione main
+[2023/05/14 15:36:48] [DEBUG] Terminata funzione main
+[2023/05/14 15:50:52] [INFO] Programma inizializzato con le seguenti flag: ['-v']
+[2023/05/14 15:50:52] [DEBUG] Verbose: True Path: logs/inviamessaggi.log Risultati Massimi: 50
+[2023/05/14 15:50:52] [DEBUG] Iniziata funzione autenticazione
+[2023/05/14 15:50:52] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/14 15:50:52] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=login&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%22user_auth%22:%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22user_name%22:%22restuser%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22password%22:%2216517ba81e199867116bc2b0a2279bbd%22%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22application_name%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name_value_list%22:%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name%22:%22notifyonsave%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22value%22:%22true%22%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/14 15:50:52] [DEBUG] Conclusa funzione autenticazione, l'id sessione è: c5e2ei8o76i5js60v9aip0dgl6
+[2023/05/14 15:50:52] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/14 15:50:53] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=get_entry_list&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22session%22:%22c5e2ei8o76i5js60v9aip0dgl6%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22module_name%22:%22os_Notifiche_comunicazioni%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22query%22:%22is_sent%20=%200%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22order_by%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22offset%22:0,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22select_fields%22:%5B%5D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22link_name_to_fields_array%22:%7B%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22max_result%22:50,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22deleted%22:0%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/14 15:50:53] [INFO] Collezionati correttamente 50 su 2020 messaggi non anccora mandati totali.
+[2023/05/14 15:50:53] [DEBUG] Using proactor: IocpProactor
+[2023/05/14 15:50:55] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:50:55] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:50:55] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:50:57] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:50:57] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:50:57] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:50:59] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:50:59] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:50:59] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:00] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:01] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:01] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:02] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:02] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:03] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:04] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:05] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:05] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:06] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:07] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:07] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:08] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:08] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:09] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:10] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:10] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:11] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:12] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:12] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:13] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:14] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:14] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:15] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:16] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:16] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:17] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:18] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:18] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:19] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:20] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:20] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:20] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:22] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:22] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:23] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:24] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:24] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:24] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:26] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:26] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:41] [INFO] Programma inizializzato con le seguenti flag: ['-v']
+[2023/05/14 15:51:41] [DEBUG] Verbose: True Path: logs/inviamessaggi.log Risultati Massimi: 10
+[2023/05/14 15:51:41] [DEBUG] Iniziata funzione autenticazione
+[2023/05/14 15:51:41] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/14 15:51:41] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=login&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%22user_auth%22:%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22user_name%22:%22restuser%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22password%22:%2216517ba81e199867116bc2b0a2279bbd%22%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22application_name%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name_value_list%22:%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name%22:%22notifyonsave%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22value%22:%22true%22%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/14 15:51:41] [DEBUG] Conclusa funzione autenticazione, l'id sessione è: 11sdgp70tekvtan9dm7k90h5ht
+[2023/05/14 15:51:41] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/14 15:51:42] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=get_entry_list&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22session%22:%2211sdgp70tekvtan9dm7k90h5ht%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22module_name%22:%22os_Notifiche_comunicazioni%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22query%22:%22is_sent%20=%200%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22order_by%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22offset%22:0,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22select_fields%22:%5B%5D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22link_name_to_fields_array%22:%7B%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22max_result%22:10,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22deleted%22:0%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/14 15:51:42] [INFO] Collezionati correttamente 10 su 2020 messaggi non anccora mandati totali.
+[2023/05/14 15:51:42] [DEBUG] Using proactor: IocpProactor
+[2023/05/14 15:51:44] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:44] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:44] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:45] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:46] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:46] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:47] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:48] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:48] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:51:49] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:58:13] [INFO] Programma inizializzato con le seguenti flag: ['-v']
+[2023/05/14 15:58:13] [DEBUG] Verbose: True Path: logs/inviamessaggi.log Risultati Massimi: 10
+[2023/05/14 15:58:13] [DEBUG] Iniziata funzione autenticazione
+[2023/05/14 15:58:13] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/14 15:58:13] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=login&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%22user_auth%22:%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22user_name%22:%22restuser%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22password%22:%2216517ba81e199867116bc2b0a2279bbd%22%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22application_name%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name_value_list%22:%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name%22:%22notifyonsave%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22value%22:%22true%22%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/14 15:58:13] [DEBUG] Conclusa funzione autenticazione, l'id sessione è: l95ku2p1slj8at2rj1tef47262
+[2023/05/14 15:58:13] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/14 15:58:14] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=get_entry_list&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22session%22:%22l95ku2p1slj8at2rj1tef47262%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22module_name%22:%22os_Notifiche_comunicazioni%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22query%22:%22is_sent%20=%200%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22order_by%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22offset%22:0,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22select_fields%22:%5B%5D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22link_name_to_fields_array%22:%7B%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22max_result%22:10,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22deleted%22:0%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/14 15:58:14] [INFO] Collezionati correttamente 10 su 2020 messaggi non anccora mandati totali.
+[2023/05/14 15:58:14] [DEBUG] Using proactor: IocpProactor
+[2023/05/14 15:58:16] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:58:16] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:58:16] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:58:18] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:58:18] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:58:18] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:58:20] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:58:20] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:58:20] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 15:58:22] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:00:11] [INFO] Programma inizializzato con le seguenti flag: ['-v']
+[2023/05/14 16:00:11] [DEBUG] Verbose: True Path: logs/inviamessaggi.log Risultati Massimi: 10
+[2023/05/14 16:00:11] [DEBUG] Iniziata funzione autenticazione
+[2023/05/14 16:00:11] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/14 16:00:11] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=login&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%22user_auth%22:%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22user_name%22:%22restuser%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22password%22:%2216517ba81e199867116bc2b0a2279bbd%22%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22application_name%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name_value_list%22:%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name%22:%22notifyonsave%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22value%22:%22true%22%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/14 16:00:11] [DEBUG] Conclusa funzione autenticazione, l'id sessione è: hohalmra1neokv4ia8l7ee8498
+[2023/05/14 16:00:11] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/14 16:00:12] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=get_entry_list&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22session%22:%22hohalmra1neokv4ia8l7ee8498%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22module_name%22:%22os_Notifiche_comunicazioni%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22query%22:%22is_sent%20=%200%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22order_by%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22offset%22:0,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22select_fields%22:%5B%5D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22link_name_to_fields_array%22:%7B%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22max_result%22:10,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22deleted%22:0%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/14 16:00:12] [INFO] Collezionati correttamente 10 su 2020 messaggi non anccora mandati totali.
+[2023/05/14 16:00:12] [DEBUG] Using proactor: IocpProactor
+[2023/05/14 16:00:13] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:00:14] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:00:14] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:00:15] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:00:16] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:00:16] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:00:17] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:00:18] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:00:18] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:00:19] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:02:41] [INFO] Programma inizializzato con le seguenti flag: ['-v']
+[2023/05/14 16:02:41] [DEBUG] Verbose: True Path: logs/inviamessaggi.log Risultati Massimi: 10
+[2023/05/14 16:02:41] [DEBUG] Iniziata funzione autenticazione
+[2023/05/14 16:02:41] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/14 16:02:41] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=login&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%22user_auth%22:%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22user_name%22:%22restuser%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22password%22:%2216517ba81e199867116bc2b0a2279bbd%22%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22application_name%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name_value_list%22:%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name%22:%22notifyonsave%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22value%22:%22true%22%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/14 16:02:41] [DEBUG] Conclusa funzione autenticazione, l'id sessione è: sbvc73abvcben7dnng4jh3ecgl
+[2023/05/14 16:02:41] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/14 16:02:41] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=get_entry_list&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22session%22:%22sbvc73abvcben7dnng4jh3ecgl%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22module_name%22:%22os_Notifiche_comunicazioni%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22query%22:%22is_sent%20=%200%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22order_by%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22offset%22:0,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22select_fields%22:%5B%5D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22link_name_to_fields_array%22:%7B%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22max_result%22:10,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22deleted%22:0%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/14 16:02:41] [INFO] Collezionati correttamente 10 su 2020 messaggi non anccora mandati totali.
+[2023/05/14 16:02:41] [DEBUG] Using proactor: IocpProactor
+[2023/05/14 16:04:20] [INFO] Programma inizializzato con le seguenti flag: ['-v']
+[2023/05/14 16:04:20] [DEBUG] Verbose: True Path: logs/inviamessaggi.log Risultati Massimi: 10
+[2023/05/14 16:04:20] [DEBUG] Iniziata funzione autenticazione
+[2023/05/14 16:04:20] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/14 16:04:21] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=login&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%22user_auth%22:%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22user_name%22:%22restuser%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22password%22:%2216517ba81e199867116bc2b0a2279bbd%22%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22application_name%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name_value_list%22:%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name%22:%22notifyonsave%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22value%22:%22true%22%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/14 16:04:21] [DEBUG] Conclusa funzione autenticazione, l'id sessione è: 1eu99t0l6bbmp8f8oopua3oq01
+[2023/05/14 16:04:21] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/14 16:04:21] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=get_entry_list&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22session%22:%221eu99t0l6bbmp8f8oopua3oq01%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22module_name%22:%22os_Notifiche_comunicazioni%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22query%22:%22is_sent%20=%200%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22order_by%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22offset%22:0,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22select_fields%22:%5B%5D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22link_name_to_fields_array%22:%7B%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22max_result%22:10,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22deleted%22:0%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/14 16:04:21] [INFO] Collezionati correttamente 10 su 2020 messaggi non anccora mandati totali.
+[2023/05/14 16:04:21] [DEBUG] Using proactor: IocpProactor
+[2023/05/14 16:04:23] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:04:23] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:04:23] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:04:25] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:04:25] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:04:25] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:04:27] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:04:27] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:04:27] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:04:28] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:05:02] [INFO] Programma inizializzato con le seguenti flag: ['-v']
+[2023/05/14 16:05:02] [DEBUG] Verbose: True Path: logs/inviamessaggi.log Risultati Massimi: 10
+[2023/05/14 16:05:02] [DEBUG] Iniziata funzione autenticazione
+[2023/05/14 16:05:02] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/14 16:05:02] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=login&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%22user_auth%22:%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22user_name%22:%22restuser%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22password%22:%2216517ba81e199867116bc2b0a2279bbd%22%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22application_name%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name_value_list%22:%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name%22:%22notifyonsave%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22value%22:%22true%22%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/14 16:05:02] [DEBUG] Conclusa funzione autenticazione, l'id sessione è: lbvh9utkt42teoea2h6dpl9g9e
+[2023/05/14 16:05:02] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/14 16:05:02] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=get_entry_list&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22session%22:%22lbvh9utkt42teoea2h6dpl9g9e%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22module_name%22:%22os_Notifiche_comunicazioni%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22query%22:%22is_sent%20=%200%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22order_by%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22offset%22:0,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22select_fields%22:%5B%5D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22link_name_to_fields_array%22:%7B%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22max_result%22:10,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22deleted%22:0%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/14 16:05:02] [INFO] Collezionati correttamente 10 su 2020 messaggi non anccora mandati totali.
+[2023/05/14 16:05:02] [DEBUG] Using proactor: IocpProactor
+[2023/05/14 16:05:04] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:05:04] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:05:05] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:05:06] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:05:06] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:05:06] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:05:08] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:05:08] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:05:09] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:05:10] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:09:08] [INFO] Programma inizializzato con le seguenti flag: ['-v']
+[2023/05/14 16:09:08] [DEBUG] Verbose: True Path: logs/inviamessaggi.log Risultati Massimi: 10
+[2023/05/14 16:09:08] [DEBUG] Iniziata funzione autenticazione
+[2023/05/14 16:09:08] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/14 16:09:08] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=login&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%22user_auth%22:%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22user_name%22:%22restuser%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22password%22:%2216517ba81e199867116bc2b0a2279bbd%22%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22application_name%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name_value_list%22:%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22name%22:%22notifyonsave%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22value%22:%22true%22%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/14 16:09:08] [DEBUG] Conclusa funzione autenticazione, l'id sessione è: thdb999h30mlvmke79tfb1fg1s
+[2023/05/14 16:09:08] [DEBUG] Starting new HTTPS connection (1): testkeyall.cittadigitale.org:443
+[2023/05/14 16:09:09] [DEBUG] https://testkeyall.cittadigitale.org:443 "GET /service/v4/rest.php?method=get_entry_list&input_type=JSON&response_type=JSON&rest_data=%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22session%22:%22thdb999h30mlvmke79tfb1fg1s%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22module_name%22:%22os_Notifiche_comunicazioni%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22query%22:%22is_sent%20=%200%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22order_by%22:%22%22,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22offset%22:0,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22select_fields%22:%5B%5D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22link_name_to_fields_array%22:%7B%7D,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22max_result%22:10,%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22deleted%22:0%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20 HTTP/1.1" 200 None
+[2023/05/14 16:09:09] [INFO] Collezionati correttamente 10 su 2020 messaggi non anccora mandati totali.
+[2023/05/14 16:09:09] [DEBUG] Using proactor: IocpProactor
+[2023/05/14 16:09:10] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:09:11] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:09:11] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:09:12] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:09:12] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:09:13] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:09:14] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:09:14] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:09:15] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:09:16] [DEBUG] Inviata correttamente la mail a federicocervelli01@gmail.com
+[2023/05/14 16:45:50] [INFO] Programma inizializzato con le seguenti flag: []
+[2023/05/14 16:45:51] [INFO] Collezionati correttamente 10 su 2020 messaggi non anccora mandati totali.
+[2023/05/14 16:45:51] [ERROR] Errore nell'invio dell'SMS: Insufficient credit
+[2023/05/14 16:45:51] [ERROR] Errore nell'invio dell'SMS: Insufficient credit
+[2023/05/14 16:45:51] [ERROR] Errore nell'invio dell'SMS: Insufficient credit
+[2023/05/14 16:45:51] [ERROR] Errore nell'invio dell'SMS: Insufficient credit
+[2023/05/14 16:45:51] [ERROR] Errore nell'invio dell'SMS: Insufficient credit
+[2023/05/14 16:45:51] [ERROR] Errore nell'invio dell'SMS: Insufficient credit

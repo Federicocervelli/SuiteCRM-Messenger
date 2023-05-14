@@ -3,6 +3,9 @@ import requests
 import json
 import sys
 import datetime
+import logging
+
+logger = logging.getLogger(__name__)
 
 BASEURL = "https://api.skebby.it/API/v1.0/REST/"
 
@@ -21,7 +24,6 @@ def json_serial(obj):
 
     raise TypeError ("Type not serializable")
 
-
 def login(username, password):
     # Ritorna una coppia (user_key, session_key) dopo l'autenticazione
 
@@ -36,52 +38,36 @@ def login(username, password):
     print("--Autenticazione effettuata : Login riuscito--")
     return user_key, session_key
 
+def sendSMS(auth, message, recipient, sender):
+    try:
+        sendsms =   {
+                        # Messaggio da inviare
+                        "message" : message,
+                        # Qualitá del messaggio dichiarata all'inizio
+                        "message_type" : MESSAGE_HIGH_QUALITY,
+                        "returnCredits" : False,
+                        # Numero destinatario
+                        "recipient": [recipient,],
+                        # Mittente custom
+                        "sender": sender,
+                        # Posticipare l'invio in minuti
+                        "scheduled_delivery_time" : None
+                    }  
+        headers = { 'user_key': auth[0],
+                    'Session_key': auth[1],
+                    'Content-type' : 'application/json' }
+        # Json.dumps() converte l'oggetto sendsms in stringa json prima di includerlo nella richiesta HTTP POST
+        r = requests.post("%ssms" % BASEURL,
+                        headers=headers,
+                        data=json.dumps(sendsms, default=json_serial))
 
-def sendSMS(auth, sendsms):
-
-    headers = { 'user_key': auth[0],
-                'Session_key': auth[1],
-                'Content-type' : 'application/json' }
-
-    # Json.dumps() converte l'oggetto sendsms in stringa json prima di includerlo nella richiesta HTTP POST
-    r = requests.post("%ssms" % BASEURL,
-                      headers=headers,
-                      data=json.dumps(sendsms, default=json_serial))
-
-    if r.status_code != 201:
-        print(r.text)
-        return None
-
-    # Converte la stringa json in oggetto python
-    return json.loads(r.text)
-
-
-async def main():
-    f = open('chiaviSMS.json')
-    credenziali = json.load(f)
-    auth = login(credenziali['email'], credenziali['password'])
-
-    if not auth:
-        print("Unable to login..")
-        sys.exit(-1)
-
-    sentSMS = sendSMS(auth,
-                      {
-                         # Messaggio da inviare
-                          "message" : "Messaggio di prova",
-                         # Qualitá del messaggio dichiarata all'inizio
-                          "message_type" : MESSAGE_HIGH_QUALITY,
-                          "returnCredits" : False,
-                         # Numero destinatario
-                          "recipient": ["+393318389305",],
-
-                         # Mittente custom
-                          "sender": None,
-
-                          # Posticipare l'invio in minuti
-                          "scheduled_delivery_time" : None
-                      })
-
-    if sentSMS['result'] == "OK":
-        print("--Messaggio inviato correttamente--")
-    f.close()
+        # Converte la stringa json in oggetto python
+        response = json.loads(r.text)
+        if response['result'] == "OK":
+            return 1
+        else:
+            logger.error("Errore nell'invio dell'SMS: " + response['result'])
+            return 0
+    except Exception as e:
+        logger.error("Errore nell'invio dell'SMS: " + str(e))
+        return 0

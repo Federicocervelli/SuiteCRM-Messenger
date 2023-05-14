@@ -1,5 +1,9 @@
 {
     "verbose" : "false",
     "log-path" : "",
-    "max-results" : 100
+    "max-results" : 10,
+    "email_sender" : "lorenzoronconi60@gmail.com",
+    "email_password" : "ysdchqchxfobolvd",
+    "skebby_email" : "federico.cervelli@osmosit.com",   
+    "skebby_password" : "ZgNPJfQ73HEKWbp!"
 }
