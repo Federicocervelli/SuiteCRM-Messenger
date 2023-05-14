@@ -1,4 +1,3 @@
-import util.mail
 import util.ripartizione
 import sys
 import logging
