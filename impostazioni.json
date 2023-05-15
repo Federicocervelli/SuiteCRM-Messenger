@@ -1,9 +1,15 @@
 {
     "verbose" : "false",
-    "log-path" : "",
-    "max-results" : 10,
+    "log_path" : "",
+    "max_results" : 10,
+    "api_url" : "https://testkeyall.cittadigitale.org/service/v4/rest.php",
+    "api_username" : "restuser",
+    "api_password" : "16517ba81e199867116bc2b0a2279bbd",
+    "module_name" : "os_Notifiche_comunicazioni",
+    "query" : "is_sent = 0",
     "email_sender" : "lorenzoronconi60@gmail.com",
     "email_password" : "ysdchqchxfobolvd",
     "skebby_email" : "federico.cervelli@osmosit.com",   
     "skebby_password" : "ZgNPJfQ73HEKWbp!"
+    
 }

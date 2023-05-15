@@ -9,6 +9,9 @@ from requests.exceptions import HTTPError
 verbose = False
 path = "logs/inviamessaggi.log"
 maxResults = 10
+baseUrl = ""
+apiUsername = ""
+apiPassword = ""
 
 #Lettura file di configurazione
 with open("impostazioni.json", "r") as f:
@@ -16,10 +19,20 @@ with open("impostazioni.json", "r") as f:
 
 if dati["verbose"] == "true":
     verbose = True
-if dati["log-path"] != "":
-    path = dati["log-path"]
-if dati["max-results"] != "":
-    maxResults = dati["max-results"]
+if dati["log_path"] != "":
+    path = dati["log_path"]
+if dati["max_results"] != "":
+    maxResults = dati["max_results"]
+if dati["api_url"] == "":
+    print("Perfavore definire l'URL dell'API di SuiteCRM su impostazioni.json.")
+    exit()
+else:
+    baseUrl = dati["api_url"]
+
+apiUsername = dati["api_username"]
+apiPassword = dati["api_password"]
+moduleName = dati["module_name"]
+query = dati["query"]
 
 def main():
     analisiComando()
@@ -52,11 +65,11 @@ def analisiComando():
 def autenticazione():
     logging.debug("Iniziata funzione autenticazione")
     
-    loginurl = """https://testkeyall.cittadigitale.org/service/v4/rest.php?method=login&input_type=JSON&response_type=JSON&rest_data={
+    loginurl = baseUrl + """?method=login&input_type=JSON&response_type=JSON&rest_data={
             \"user_auth\":
                 { 
-                    \"user_name\":\"restuser\",
-                    \"password\":\"16517ba81e199867116bc2b0a2279bbd\"},
+                    \"user_name\":\"""" + apiUsername + """\",
+                    \"password\":\"""" + apiPassword + """\"},
                     \"application_name\":\"\",
                     \"name_value_list\":{
                     \"name\":\"notifyonsave\",
@@ -97,8 +110,8 @@ def autenticazione():
 def collezione(id):
     dataurl = """https://testkeyall.cittadigitale.org/service/v4/rest.php?method=get_entry_list&input_type=JSON&response_type=JSON&rest_data={
                     "session":\""""+ id + """\",
-                    "module_name":"os_Notifiche_comunicazioni",
-                    "query":"is_sent = 0",
+                    "module_name":\"""" + moduleName + """\",
+                    "query":\"""" + query + """\",
                     "order_by":"",
                     "offset":0,
                     "select_fields":[],
@@ -114,13 +127,13 @@ def collezione(id):
         response = requests.request("GET", dataurl, headers=headers, data=payload)
         
     except HTTPError as http_err:
-        logging.error(f'errore HTTP nel login: {http_err}')
-        print(f'errore HTTP nel login: {http_err}')
+        logging.error(f'errore HTTP nella collezione: {http_err}')
+        print(f'errore HTTP nella collezione: {http_err}')
         return -1
     
     except Exception as err:
-        logging.error(f'errore generico nel login: {err}')
-        print(f'errore generico nel login: {err}')
+        logging.error(f'errore generico nella collezione: {err}')
+        print(f'errore generico nella collezione: {err}')
         return -1
     
     jsonResponse = response.json()
