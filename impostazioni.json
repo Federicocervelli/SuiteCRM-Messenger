@@ -1,7 +1,11 @@
 {
     "verbose" : "false",
     "log_path" : "",
+<<<<<<< Updated upstream
     "max_results" : 10,
+=======
+    "max_results" : 100,
+>>>>>>> Stashed changes
     "api_url" : "https://testkeyall.cittadigitale.org/service/v4/rest.php",
     "api_username" : "restuser",
     "api_password" : "16517ba81e199867116bc2b0a2279bbd",
@@ -10,6 +14,5 @@
     "email_sender" : "lorenzoronconi60@gmail.com",
     "email_password" : "ysdchqchxfobolvd",
     "skebby_email" : "federico.cervelli@osmosit.com",   
-    "skebby_password" : "ZgNPJfQ73HEKWbp!"
-    
+    "skebby_password" : "ZgNPJfQ73HEKWbp!" 
 }
