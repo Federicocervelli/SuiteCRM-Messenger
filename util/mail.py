@@ -28,4 +28,10 @@ def invia_mail(mittente, destinatario, oggetto, descrizione, password):
         return 1
     except Exception as e:
         logger.error("Errore invio mail a " + destinatario + ": " + str(e))
+<<<<<<< Updated upstream
         return 0
+=======
+        return 0
+    
+    return update(messageid)
+>>>>>>> Stashed changes
