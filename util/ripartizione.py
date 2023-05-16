@@ -29,7 +29,7 @@ async def ripartizione(data):
 
 def sendMsg(msg):
     if msg['name_value_list']['notification_type']['value'] == 'EMAIL':
-        return util.mail.invia_mail(mittente, 'federicocervelli01@gmail.com', msg['name_value_list']['subject']['value'], msg['name_value_list']['body']['value'], password)
+        return util.mail.invia_mail(mittente, 'federicocervelli01@gmail.com', msg['name_value_list']['subject']['value'], msg['name_value_list']['body']['value'], password, msg["id"])
     elif msg['name_value_list']['notification_type']['value'] == 'SMS' and authSkebby is not None:
         return util.sms.sendSMS(authSkebby, msg['name_value_list']['body']['value'], "+393661455735", None)
     else:
