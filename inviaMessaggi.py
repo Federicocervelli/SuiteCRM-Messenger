@@ -1,15 +1,16 @@
-import util.ripartizione
+from util.ripartizione import main as ripartizione
 import sys
 import logging
 import requests
 import json
-import asyncio
+import util.statics as statics
 from requests.exceptions import HTTPError
 
 verbose = False
 path = "logs/inviamessaggi.log"
 maxResults = 10
-baseUrl = ""
+statics.session = ""
+statics.baseUrl = ""
 apiUsername = ""
 apiPassword = ""
 
@@ -27,21 +28,21 @@ if dati["api_url"] == "":
     print("Perfavore definire l'URL dell'API di SuiteCRM su impostazioni.json.")
     exit()
 else:
-    baseUrl = dati["api_url"]
+    statics.baseUrl = dati["api_url"]
 
 apiUsername = dati["api_username"]
 apiPassword = dati["api_password"]
-moduleName = dati["module_name"]
+statics.moduleName = dati["module_name"]
 query = dati["query"]
 
 def main():
     analisiComando()
     configurazioneLog()
     #Autenticazione all'API
-    id = autenticazione()
+    statics.session = autenticazione()
     #Recupero messaggi non inviati dall'API
-    data = collezione(id)
-    util.ripartizione.main(data)
+    data = collezione()
+    ripartizione(data)
             
 def analisiComando():
     args = sys.argv[1:]
@@ -65,7 +66,7 @@ def analisiComando():
 def autenticazione():
     logging.debug("Iniziata funzione autenticazione")
     
-    loginurl = baseUrl + """?method=login&input_type=JSON&response_type=JSON&rest_data={
+    loginurl = statics.baseUrl + """?method=login&input_type=JSON&response_type=JSON&rest_data={
             \"user_auth\":
                 { 
                     \"user_name\":\"""" + apiUsername + """\",
@@ -107,10 +108,10 @@ def autenticazione():
     logging.debug("Conclusa funzione autenticazione, l'id sessione è: " + id)
     return id
    
-def collezione(id):
-    dataurl = """https://testkeyall.cittadigitale.org/service/v4/rest.php?method=get_entry_list&input_type=JSON&response_type=JSON&rest_data={
-                    "session":\""""+ id + """\",
-                    "module_name":\"""" + moduleName + """\",
+def collezione():
+    dataurl = statics.baseUrl + """?method=get_entry_list&input_type=JSON&response_type=JSON&rest_data={
+                    "session":\""""+ statics.session + """\",
+                    "module_name":\"""" + statics.moduleName + """\",
                     "query":\"""" + query + """\",
                     "order_by":"",
                     "offset":0,
@@ -150,7 +151,7 @@ def collezione(id):
     print("Collezionati correttamente " + str(resultCount) + " su " + str(totalCount) + " messaggi non anccora mandati totali.")
     logging.info("Collezionati correttamente " + str(resultCount) + " su " + str(totalCount) + " messaggi non anccora mandati totali.")
     return jsonResponse
-    
+
 def configurazioneLog():
     
     if(verbose):
