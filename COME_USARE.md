@@ -129,7 +129,7 @@ Il file ripartizione.py si occupa della gestione delle notifiche
   2. La funziona asincrona ripartizione() gestisce la ripartizione dei messaggi per l'invio tramite SMS o Email, dove i messaggi vengono estratti dal campo 'entry_list' del parametro
      "data" definito nella dichiarazione della funzione. 
   3. Se l'autenticazione a Skebby é stata effettuamente correttamente, viene creato un thread pool con un massimo di 3 workers e un elenco di oggetti "futures" per le operazioni di invio
-     dei messaggi. Per ogni messaggio nella lista 'messages' viene invocata "sensMsg" tramite comando executor.submit()
+     dei messaggi. Per ogni messaggio nella lista 'messages' viene invocata "sendMsg" tramite comando executor.submit()
   4. Dopo l'attessa del completamento degli oggetti "Future", vengono salvati i risultati in una lista chiamata "results" per poi stampare il numero di messaggi inviati correttamente
   5. La funzione sendMsg() prende come parametro il messaggio e controlla il tipo di notifica specificato nel messaggio, richiamando la funzione corrispondente al tipo (sms, mail). 
      Se l'autenticazione a Skebby non é andata a buon fine, viene registrato un errore di autenticazione o di errore generico
