@@ -31,11 +31,13 @@ def login(username, password):
                      % (BASEURL, username, password))
 
     if r.status_code != 200:
-        print("--Errore : Impossibile effettuare il Login--")
+        print("Errore login skebby: " + r.text)
+        logger.error("Errore login skebby: " + r.text)
         return None
 
     user_key, session_key = r.text.split(';')
-    print("--Autenticazione effettuata : Login riuscito--")
+    print("Login Skebby Eseguito.")
+    logger.debug("Login Skebby Eseguito.")
     return user_key, session_key
 
 def sendSMS(auth, message, recipient, sender):

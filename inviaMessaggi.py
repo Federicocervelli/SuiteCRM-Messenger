@@ -9,10 +9,6 @@ from requests.exceptions import HTTPError
 verbose = False
 path = "logs/inviamessaggi.log"
 maxResults = 10
-statics.session = ""
-statics.baseUrl = ""
-apiUsername = ""
-apiPassword = ""
 
 #Lettura file di configurazione
 with open("impostazioni.json", "r") as f:
