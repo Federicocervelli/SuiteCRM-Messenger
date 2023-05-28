@@ -11,6 +11,7 @@ with open("impostazioni.json", encoding="UTF-8") as f:
     impostazioni = json.load(f) 
     mittente = impostazioni['email_sender']
     password = impostazioni['email_password']
+    workers = impostazioni['workers']
     authSkebby = util.sms.login(impostazioni['skebby_email'], impostazioni['skebby_password'])
     
 async def ripartizione(data):
@@ -20,7 +21,7 @@ async def ripartizione(data):
         print("Errore nell'autenticazione Skebby, sara' impossibile inviare gli SMS")
         logger.error("Errore nell'autenticazione Skebby, impossibile inviare gli SMS")
     
-    with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as executor:
         # Submit 5 tasks to the thread pool
         futures = [executor.submit(sendMsg, msg) for msg in messages]
     
@@ -29,9 +30,9 @@ async def ripartizione(data):
 
 def sendMsg(msg):
     if msg['name_value_list']['notification_type']['value'] == 'EMAIL':
-        return util.mail.invia_mail(mittente, 'federicocervelli01@gmail.com', msg['name_value_list']['subject']['value'], msg['name_value_list']['body']['value'], password, msg["id"])
+        return util.mail.invia_mail(mittente, msg['name_value_list']['address_to']['value'], msg['name_value_list']['subject']['value'], msg['name_value_list']['body']['value'], password, msg["id"])
     elif msg['name_value_list']['notification_type']['value'] == 'SMS' and authSkebby is not None:
-        return util.sms.sendSMS(authSkebby, msg['name_value_list']['body']['value'], "+393661455735", None)
+        return util.sms.sendSMS(authSkebby, msg['name_value_list']['body']['value'], msg['name_value_list']['notification_type']['value'], None)
     else:
         if authSkebby == None:
             logging.error("Impossibile inviare SMS, autenticazione Skebby fallita")
