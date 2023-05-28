@@ -19,9 +19,26 @@ indica dove deve essere salvato il file di log.
 **max-results** : numero  
 Numero di risultati che il programma ottiene dal CRM ad ogni ciclo di esecuzione.
 
+**workers** : numero  
+Numero di thread da usare nell'invio dei diversi messaggi (un invio troppo veloce vi farà andare in timeout dall'invio mail).
+
 **api_url** : "URL"
 Url dell'API di suitecrm.
 Esempio: "https://testkeyall.cittadigitale.org/service/v4/rest.php"
+
+**api_username** : "username"
+nome dell'user api suitecrm
+
+**api_password** : "password"
+password dell'user api suitecrm
+
+**module_name** : "nome modulo"  
+Nome del modulo su cui fare la query
+Esempio: "os_Notifiche_comunicazioni"
+
+**query** : "query"  
+testo della query da eseguire per reperire i messaggi
+Esempio: "is_sent = 0"
 
 **email_sender** : "email"  
 Email da cui inviare i messaggi.
@@ -44,7 +61,7 @@ python3 inviaMessaggi.py (-v) (logpath)
 
 **-v** : Indica se abilitare il verbose. in caso la flag non sia presente, il programma sceglie di default l'opzione nelle impostazioni.json.
 
-**logpath** Stessa cosa: qui si puo' scegliere un path alternativo per i log, ma se non e' specificato, il programma sceglie di default quello definito in impostazioni.json.
+**logpath** Stessa cosa: qui si puo' scegliere un path alternativo per i log, ma se non e' specificato, il programma sceglie di default quello definito in impostazioni.json. se non è definito nemmeno lì, il log verrà salvato nella cartella /log/ , dentro alla cartella del progetto.
 
 ### FILE inviaMessaggi.PY ###
 
