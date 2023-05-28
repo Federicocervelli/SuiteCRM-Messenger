@@ -46,6 +46,18 @@ python3 inviaMessaggi.py (-v) (logpath)
 
 **logpath** Stessa cosa: qui si puo' scegliere un path alternativo per i log, ma se non e' specificato, il programma sceglie di default quello definito in impostazioni.json.
 
+### FILE inviaMessaggi.PY ###
+
+File principale del progetto. da qui partono tutte le chiamate alle altre funzioni.
+si occupa di:
+- settare e leggere i valori di variabili quali verbose e path dal file di configurazione e/o dal comando in console,
+- inizializzare il logger nella modalità adeguata
+- eseguire l'autenticazione tramite chiamata API usando la libreria requests
+- collezionare i dati necessari sempre tramite chiamata API
+- inviare i dati recuperati alla funzione di ripartizione che poi li gestirà uno ad uno
+
+
+
 
 ### FILE MAIL.PY ###
 
