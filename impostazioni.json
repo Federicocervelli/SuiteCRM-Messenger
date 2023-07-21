@@ -1,0 +1,15 @@
+{
+    "verbose" : "false",
+    "log_path" : "",
+    "max_results" : 100,
+    "workers" : 3,
+    "api_url" : "",
+    "api_username" : "",
+    "api_password" : "",
+    "module_name" : "os_Notifiche_comunicazioni",
+    "query" : "is_sent = 0",
+    "email_sender" : "",
+    "email_password" : "",
+    "skebby_email" : "",   
+    "skebby_password" : "" 
+}
